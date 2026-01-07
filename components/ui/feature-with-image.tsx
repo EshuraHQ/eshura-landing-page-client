@@ -1,16 +1,13 @@
 import { Badge } from "@/components/ui/badge";
+import { CpuArchitecture } from "@/components/ui/cpu-architecture";
 
 function Feature() {
     return (
         <div className="w-full py-20 lg:py-40">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4 md:px-8">
                 <div className="flex flex-col-reverse lg:flex-row gap-10 lg:items-center">
-                    <div className="bg-muted rounded-md w-full aspect-video h-full flex-1">
-                        <img
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Dashboard"
-                            className="object-cover w-full h-full rounded-md"
-                        />
+                    <div className="bg-muted rounded-md w-full aspect-video h-full flex-1 lg:ml-6 flex items-center justify-center p-4">
+                        <CpuArchitecture />
                     </div>
                     <div className="flex gap-4 pl-0 lg:pl-20 flex-col  flex-1">
                         <div>
