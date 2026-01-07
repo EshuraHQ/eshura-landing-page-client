@@ -100,18 +100,18 @@ export const menuItems: MenuItem[] = [
             ],
         },
     },
-    {
-        name: 'Resources',
-        hasDropdown: true,
-        dropdownContent: {
-            items: [
-                { name: 'Case Studies', href: '#' },
-                { name: 'Blogs & Insights', href: '#' },
-                { name: 'Documentation', href: '#' },
-                { name: 'ROI Calculator', href: '#' },
-            ],
-        },
-    },
+    // {
+    //     name: 'Resources',
+    //     hasDropdown: true,
+    //     dropdownContent: {
+    //         items: [
+    //             { name: 'Case Studies', href: '#' },
+    //             { name: 'Blogs & Insights', href: '#' },
+    //             { name: 'Documentation', href: '#' },
+    //             { name: 'ROI Calculator', href: '#' },
+    //         ],
+    //     },
+    // },
     {
         name: 'Company',
         hasDropdown: true,
