@@ -284,7 +284,7 @@ export const HeroHeader = () => {
                                 aria-label="home"
                                 className="flex items-center space-x-2">
                                 <div className="flex items-center gap-2">
-                                    <img src="./eshura-logo.png" alt="eshura-logo" className="h-14 w-auto" />
+                                    <img src="/eshura-logo.png" alt="eshura-logo" className="h-14 w-auto" />
                                     <p className='text-xl font-bold'>Eshura</p>
                                 </div>
                             </Link>
