@@ -1,18 +1,14 @@
 "use client";
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { About3 } from "@/components/ui/about-3";
+import { About } from "@/components/company/company-about";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { HeroHeader } from "@/components/hero-section";
-import { Footer } from "@/components/footer";
-import FeaturedSectionStats from "@/components/ui/featured-section-stats";
+import FeaturedSectionStats from "@/components/company/featured-section-stats";
 
 export default function CompanyPage() {
     return (
         <>
-            {/* Navigation Header */}
-            <HeroHeader />
 
             <div className="w-full scroll-smooth pt-35">
                 {/* 1. Hero Section with Sparkles */}
@@ -44,7 +40,7 @@ export default function CompanyPage() {
 
                 {/* 2. About Us Section */}
                 <section id="about" className="bg-background">
-                    <About3
+                    <About
                         title="About Eshura"
                         description="We are pioneering the future of Agentic AI, empowering businesses to automate complex workflows with human-like precision."
                     />
@@ -77,8 +73,6 @@ export default function CompanyPage() {
                 </section>
             </div>
 
-            {/* Footer */}
-            <Footer />
         </>
     );
 }

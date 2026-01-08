@@ -66,7 +66,7 @@ const defaultAchievements = [
     { label: "Recognized Awards", value: "10+" },
 ];
 
-export const About3 = ({
+export const About = ({
     title = "About Us",
     description = "Shadcnblocks is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age.",
     mainImage = {

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { ProductHero } from "@/components/product/hero-section";
 import { FeatureHero } from "@/components/product/feature-hero";
 import { FeaturesGrid } from "@/components/product/features-grid";
 import { ProductFaq } from "@/components/product/faq";
@@ -7,6 +6,7 @@ import { ProductCta } from "@/components/product/cta";
 import { Footer } from "@/components/footer";
 import { menuItems } from "@/lib/menu-data";
 import { productData } from "@/lib/product-data";
+import { ProductHero } from "@/components/product/hero-section";
 
 interface PageProps {
     params: Promise<{
@@ -76,7 +76,6 @@ export default async function ProductPage({ params }: PageProps) {
                 buttonText={data.cta.buttonText}
                 items={data.cta.items}
             />
-            <Footer />
         </div>
     );
 }

@@ -4,7 +4,6 @@ import { WhyChooseUs } from "@/components/why-choose-us";
 import Features from "@/components/featured-section";
 import { Integration } from "@/components/integration";
 import { Cta } from "@/components/cta";
-import { Footer } from "@/components/footer";
 
 export default function Home() {
     return (
@@ -15,7 +14,6 @@ export default function Home() {
             <Features />
             <Integration heading="Seamless Integration" />
             <Cta heading="Get Started Today" />
-            <Footer />
         </>
     );
 }
