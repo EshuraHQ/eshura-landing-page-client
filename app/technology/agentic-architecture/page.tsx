@@ -6,6 +6,7 @@ import { Faq5 } from "@/components/ui/faq-5";
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
 import { Feature } from "@/components/ui/feature-with-image";
 import { Particles } from "@/components/ui/particles";
+import TechnologyHeroSection from "@/components/technology/technology-hero-section";
 
 export default function AgenticArchitecturePage() {
     const { theme } = useTheme();
@@ -27,6 +28,9 @@ export default function AgenticArchitecturePage() {
                 />
             </div>
             <div className="relative z-10">
+                {/* Technology Hero Section */}
+                <TechnologyHeroSection />
+
                 {/* Hero / Intro Section with Image */}
                 <Feature />
 
