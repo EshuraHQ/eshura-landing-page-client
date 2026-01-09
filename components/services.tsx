@@ -82,175 +82,143 @@ export function Services() {
                         <TabsList className="grid grid-cols-5 w-auto">
                             <TabsTrigger value="insights" className="flex items-center gap-2">
                                 <Lightbulb className="h-4 w-4" />
-                                Insights
+                                Revenue Growth
                             </TabsTrigger>
                             <TabsTrigger value="metrics" className="flex items-center gap-2">
                                 <BarChart3 className="h-4 w-4" />
-                                Metrics
+                                Support Automation
                             </TabsTrigger>
                             <TabsTrigger value="trends" className="flex items-center gap-2">
                                 <TrendingUp className="h-4 w-4" />
-                                Trends
+                                Smart Scheduling
                             </TabsTrigger>
                             <TabsTrigger value="sources" className="flex items-center gap-2">
                                 <Database className="h-4 w-4" />
-                                Sources
+                                Omnichannel AI
                             </TabsTrigger>
                             <TabsTrigger value="models" className="flex items-center gap-2">
                                 <Boxes className="h-4 w-4" />
-                                Models
+                                Knowledge Intelligence
                             </TabsTrigger>
                         </TabsList>
                     </div>
 
-                    {/* Dashboard Content */}
+                    {/* Chatbot UI Mockup Content */}
                     <TabsContent value="insights" className="mt-0">
-                        <Card className="relative overflow-hidden border-2">
-                            <BorderBeam size={300} duration={12} colorFrom="#6366f1" colorTo="#8b5cf6" />
-                            <CardContent className="p-6">
-                                {/* Dashboard Header */}
-                                <div className="mb-6">
-                                    <h2 className="text-2xl font-semibold">Dashboard</h2>
-                                    <div className="flex gap-4 mt-2">
-                                        <Button variant="ghost" size="sm" className="text-muted-foreground">Overview</Button>
-                                        <Button variant="ghost" size="sm" className="text-muted-foreground">Analytics</Button>
-                                        <Button variant="ghost" size="sm" className="text-muted-foreground">Reports</Button>
-                                        <Button variant="ghost" size="sm" className="text-muted-foreground">Notifications</Button>
+                        <Card className="glow-edge-container relative overflow-visible border-0">
+                            <CardContent className="p-8 md:p-12">
+                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                                    {/* Left Side - Benefits Text */}
+                                    <div className="space-y-6">
+                                        <h3 className="text-xl font-semibold text-foreground">How AI Chatbots Drive Revenue</h3>
+                                        <div className="space-y-4">
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-indigo-500 mt-2 shrink-0" />
+                                                <p className="text-muted-foreground text-sm">Convert casual visitors into paying customers with personalized conversations</p>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-indigo-500 mt-2 shrink-0" />
+                                                <p className="text-muted-foreground text-sm">Understand customer intent and guide them to the right products instantly</p>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-indigo-500 mt-2 shrink-0" />
+                                                <p className="text-muted-foreground text-sm">Recommend products based on real-time preferences and browsing behavior</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Stats Row */}
-                                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                                    {statsData.map((stat, index) => (
-                                        <Card key={index} className="bg-card">
-                                            <CardHeader className="pb-2">
-                                                <CardDescription className="flex items-center gap-2">
-                                                    <stat.icon className="h-4 w-4" />
-                                                    {stat.title}
-                                                </CardDescription>
-                                            </CardHeader>
-                                            <CardContent>
-                                                <div className="text-2xl font-bold">{stat.value}</div>
-                                                <div className={`flex items-center text-sm ${stat.trend === 'up' ? 'text-green-500' : 'text-red-500'}`}>
-                                                    {stat.trend === 'up' ? <ArrowUpRight className="h-4 w-4" /> : <ArrowDownRight className="h-4 w-4" />}
-                                                    {stat.change}
+                                    {/* Center - Mobile Chatbot Preview */}
+                                    <div className="flex justify-center">
+                                        <div className="w-64 bg-white rounded-[2.5rem] p-2 shadow-2xl border border-gray-200">
+                                            {/* Phone Frame */}
+                                            <div className="bg-gray-50 rounded-[2rem] overflow-hidden">
+                                                {/* Phone Notch */}
+                                                <div className="bg-white h-6 flex items-center justify-center">
+                                                    <div className="w-20 h-1.5 bg-gray-200 rounded-full" />
                                                 </div>
-                                            </CardContent>
-                                        </Card>
-                                    ))}
-                                    {/* Total Revenue Card */}
-                                    <Card className="bg-card">
-                                        <CardHeader className="pb-2">
-                                            <CardDescription className="flex items-center gap-2">
-                                                <DollarSign className="h-4 w-4" />
-                                                Total Revenue
-                                            </CardDescription>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="text-2xl font-bold">$15,231.89</div>
-                                            <div className="flex items-center text-sm text-green-500">
-                                                <ArrowUpRight className="h-4 w-4" />
-                                                +20.1%
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
 
-                                {/* Charts and Data Section */}
-                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                                    {/* Sales Activity Chart */}
-                                    <Card className="lg:col-span-2">
-                                        <CardHeader>
-                                            <CardTitle className="text-base">Sales Activity - Monthly</CardTitle>
-                                            <CardDescription>Your sales for the last 6 months</CardDescription>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="h-40 flex items-end gap-2">
-                                                {[40, 65, 35, 85, 55, 70, 45, 80, 50, 90, 60, 75].map((height, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className="flex-1 bg-gradient-to-t from-red-200 to-red-100 rounded-t"
-                                                        style={{ height: `${height}%` }}
-                                                    />
-                                                ))}
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-
-                                    {/* Subscriptions Card */}
-                                    <Card>
-                                        <CardHeader>
-                                            <CardTitle className="text-base">Subscriptions</CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="text-3xl font-bold mb-2">+2350</div>
-                                            <div className="h-24 flex items-end gap-1">
-                                                {[30, 45, 35, 50, 40, 65, 55, 70, 60, 80, 75, 90].map((height, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className={`flex-1 rounded-t ${i % 2 === 0 ? 'bg-teal-400' : 'bg-orange-400'}`}
-                                                        style={{ height: `${height}%` }}
-                                                    />
-                                                ))}
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-
-                                {/* Payments Table and Team Members */}
-                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-                                    {/* Payments Table */}
-                                    <Card className="lg:col-span-2">
-                                        <CardHeader>
-                                            <CardTitle className="text-base">Payments</CardTitle>
-                                            <CardDescription>Manage your payments</CardDescription>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="space-y-2">
-                                                <div className="grid grid-cols-4 text-xs text-muted-foreground font-medium pb-2 border-b">
-                                                    <div>Status</div>
-                                                    <div>Email</div>
-                                                    <div>Amount</div>
-                                                    <div>Cookies</div>
-                                                </div>
-                                                {paymentsData.map((payment, index) => (
-                                                    <div key={index} className="grid grid-cols-4 text-sm py-2 border-b border-dashed">
-                                                        <div className={`font-medium ${payment.status === 'Success' ? 'text-green-600' :
-                                                            payment.status === 'Processing' ? 'text-yellow-600' : 'text-red-600'
-                                                            }`}>
-                                                            {payment.status}
-                                                        </div>
-                                                        <div className="text-muted-foreground">{payment.email}</div>
-                                                        <div>{payment.amount}</div>
-                                                        <div className="text-muted-foreground">-</div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-
-                                    {/* Team Members */}
-                                    <Card>
-                                        <CardHeader>
-                                            <CardTitle className="text-base">Team Members</CardTitle>
-                                            <CardDescription>Invite your team members to collaborate.</CardDescription>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="space-y-4">
-                                                {teamMembers.map((member, index) => (
-                                                    <div key={index} className="flex items-center gap-3">
-                                                        <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-xs font-medium">
-                                                            {member.avatar}
-                                                        </div>
-                                                        <div className="flex-1 min-w-0">
-                                                            <div className="text-sm font-medium truncate">{member.name}</div>
-                                                            <div className="text-xs text-muted-foreground truncate">{member.email}</div>
+                                                {/* Chat Header */}
+                                                <div className="bg-white px-4 py-3 border-b border-gray-100">
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xs font-medium">AI</div>
+                                                        <div>
+                                                            <div className="text-sm font-semibold text-gray-900">Shopping Assistant</div>
+                                                            <div className="text-xs text-green-500 flex items-center gap-1">
+                                                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                                                                Online
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                ))}
+                                                </div>
+
+                                                {/* Chat Messages */}
+                                                <div className="bg-gray-50 px-3 py-4 space-y-3 h-64 overflow-hidden">
+                                                    {/* Bot Message */}
+                                                    <div className="flex gap-2">
+                                                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shrink-0" />
+                                                        <div className="bg-white rounded-2xl rounded-tl-sm px-3 py-2 max-w-[80%] shadow-sm">
+                                                            <p className="text-xs text-gray-700">Hi! How can I help you today?</p>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* User Message */}
+                                                    <div className="flex justify-end">
+                                                        <div className="bg-indigo-500 text-white rounded-2xl rounded-tr-sm px-3 py-2 max-w-[80%]">
+                                                            <p className="text-xs">I have dry skin. Suggest a moisturizer.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Bot Response */}
+                                                    <div className="flex gap-2">
+                                                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shrink-0" />
+                                                        <div className="bg-white rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%] shadow-sm">
+                                                            <p className="text-xs text-gray-700 mb-2">For dry skin, I highly recommend our Intense Hydration Cream.</p>
+                                                            {/* Product Card */}
+                                                            <div className="bg-gray-50 rounded-lg p-2 border border-gray-100">
+                                                                <div className="flex gap-2">
+                                                                    <div className="w-12 h-12 bg-gradient-to-br from-gray-200 to-gray-300 rounded-md shrink-0" />
+                                                                    <div>
+                                                                        <p className="text-xs font-medium text-gray-900">Intense Hydration Cream</p>
+                                                                        <p className="text-[10px] text-gray-500">Deep moisture for 24hrs</p>
+                                                                        <p className="text-xs font-semibold text-indigo-600 mt-1">$29.99</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {/* Input Area */}
+                                                <div className="bg-white px-3 py-3 border-t border-gray-100">
+                                                    <div className="bg-gray-100 rounded-full px-4 py-2 flex items-center">
+                                                        <span className="text-xs text-gray-400">Message Shopping Assistant...</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </CardContent>
-                                    </Card>
+                                        </div>
+                                    </div>
+
+                                    {/* Right Side - Business Outcomes */}
+                                    <div className="space-y-6">
+                                        <h3 className="text-xl font-semibold text-foreground">Measurable Business Impact</h3>
+                                        <div className="space-y-4">
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-purple-500 mt-2 shrink-0" />
+                                                <p className="text-muted-foreground text-sm">35% higher conversion rates through guided shopping experiences</p>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-purple-500 mt-2 shrink-0" />
+                                                <p className="text-muted-foreground text-sm">25% increase in average order value with smart upselling</p>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-purple-500 mt-2 shrink-0" />
+                                                <p className="text-muted-foreground text-sm">60% reduction in cart abandonment with instant support</p>
+                                            </div>
+                                        </div>
+                                        <Button className="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white">
+                                            Learn More
+                                        </Button>
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>

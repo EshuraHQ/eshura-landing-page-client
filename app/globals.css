@@ -191,3 +191,56 @@
     offset-distance: 100%;
   }
 }
+
+/* Services Container - Sharp edges with soft embedded glow */
+.glow-edge-container {
+  position: relative;
+  border-radius: 0 !important;
+  background: var(--card);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.glow-edge-container::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.4) 0%,
+    rgba(99, 102, 241, 0.5) 25%,
+    rgba(168, 85, 247, 0.4) 50%,
+    rgba(99, 102, 241, 0.5) 75%,
+    rgba(139, 92, 246, 0.4) 100%
+  );
+  z-index: -1;
+  animation: glow-pulse 8s ease-in-out infinite;
+}
+
+.glow-edge-container::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.15) 0%,
+    rgba(99, 102, 241, 0.2) 25%,
+    rgba(168, 85, 247, 0.15) 50%,
+    rgba(99, 102, 241, 0.2) 75%,
+    rgba(139, 92, 246, 0.15) 100%
+  );
+  filter: blur(12px);
+  z-index: -2;
+  animation: glow-pulse 8s ease-in-out infinite reverse;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
