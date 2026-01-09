@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { BackgroundPattern } from "@/components/background-pattern";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
             <body className={inter.className}>
                 <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
                     <Navbar />
+                    <BackgroundPattern />
                     {children}
                     <Footer />
                 </ThemeProvider>

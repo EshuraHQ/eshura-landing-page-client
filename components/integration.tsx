@@ -66,10 +66,10 @@ export const Integration = ({
     },
 }: Feature2Props) => {
     return (
-        <section className="py-20 md:py-32 bg-background">
+        <section className="py-6 md:py-12 bg-background">
             <div className="container mx-auto max-w-6xl px-6">
                 {/* Section Heading */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-6">
                     <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
                         {heading}
                     </h2>

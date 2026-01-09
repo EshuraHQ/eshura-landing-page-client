@@ -40,10 +40,10 @@ const problems = [
 
 export function WhatWeAreSolving() {
     return (
-        <section className="bg-background py-20 md:py-32">
+        <section className="bg-background py-6 md:py-12">
             <div className="mx-auto max-w-6xl px-6">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-6">
                     <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
                         What we are solving?
                     </h2>

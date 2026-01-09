@@ -27,14 +27,14 @@ const transitionVariants = {
 }
 
 export function HeroSection() {
-    const [activeCategory, setActiveCategory] = React.useState('health')
+    const [activeCategory, setActiveCategory] = React.useState('fitness')
 
     return (
         <>
             <main className="overflow-hidden relative">
                 <FlickeringGridDemo />
-                <section className="py-20 md:py-32">
-                    <div className="relative mx-auto max-w-6xl px-6 pt-16 lg:pt-24">
+                <section className="pt-24 pb-6 md:pt-32 md:pb-12">
+                    <div className="relative mx-auto max-w-6xl px-6 pt-6 lg:pt-10">
                         <div className="relative z-10 mx-auto max-w-4xl text-center">
                             <AnimatedGroup
                                 variants={{
@@ -51,16 +51,16 @@ export function HeroSection() {
                             >
                                 <h1
                                     className="text-balance text-4xl font-medium sm:text-5xl md:text-6xl">
-                                    Automate Your Business with AI Agents
+                                    Scale Your Business with AI Infrastructure
                                 </h1>
 
                                 <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg">
-                                    Deploy intelligent AI agents that handle complex tasks, automate workflows, and deliver results 24/7. Transform your operations with cutting-edge automation technology.
+                                    Deploy enterprise-ready AI agents that power customer conversations, automate workflows, and drive revenue—securely and at scale.
                                 </p>
 
                                 <form
                                     action=""
-                                    className="mt-12 mx-auto max-w-sm">
+                                    className="mt-6 mx-auto max-w-sm">
                                     <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] pr-1.5 items-center rounded-[1rem] border shadow shadow-zinc-950/5 has-[input:focus]:ring-2 lg:pr-0">
                                         <Mail className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
 
@@ -74,7 +74,7 @@ export function HeroSection() {
                                             <Button
                                                 aria-label="submit"
                                                 size="sm"
-                                                className="rounded-[0.5rem]">
+                                                className="rounded-[0.5rem] cursor-pointer">
                                                 <span className="hidden md:block">Book a Demo</span>
                                                 <SendHorizonal
                                                     className="relative mx-auto size-5 md:hidden"
@@ -89,10 +89,10 @@ export function HeroSection() {
                                     aria-hidden
                                     className="bg-radial from-primary/50 dark:from-primary/25 relative mx-auto mt-20 max-w-2xl to-transparent to-55% text-left"
                                 >
-                                    <div className="bg-background border-border/50 absolute inset-0 mx-auto w-80 -translate-x-3 -translate-y-12 rounded-[2rem] border p-2 [mask-image:linear-gradient(to_bottom,#000_50%,transparent_90%)] sm:-translate-x-6">
+                                    <div className="bg-background border-border/50 absolute inset-0 mx-auto w-80 -translate-x-3 -translate-y-12 rounded-[2rem] border p-2 [mask-image:linear-gradient(to_bottom,#000_80%,transparent_100%)] sm:-translate-x-6">
                                         <div className="relative h-96 overflow-hidden rounded-[1.5rem] border p-2 pb-12 before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-45deg,var(--border),var(--border)_1px,transparent_1px,transparent_6px)] before:opacity-50"></div>
                                     </div>
-                                    <div className="bg-muted dark:bg-background/50 border-border/50 mx-auto w-80 translate-x-4 rounded-[2rem] border p-2 backdrop-blur-3xl [mask-image:linear-gradient(to_bottom,#000_50%,transparent_90%)] sm:translate-x-8">
+                                    <div className="bg-muted dark:bg-background/50 border-border/50 mx-auto w-80 translate-x-4 rounded-[2rem] border p-2 backdrop-blur-3xl [mask-image:linear-gradient(to_bottom,#000_80%,transparent_100%)] sm:translate-x-8">
                                         <div className="bg-background space-y-2 overflow-hidden rounded-[1.5rem] border p-2 shadow-xl dark:bg-white/5 dark:shadow-black dark:backdrop-blur-3xl">
                                             <CardContent activeCategory={activeCategory} />
 
@@ -103,14 +103,14 @@ export function HeroSection() {
                                 </div>
 
                                 {/* Category Buttons - Just below the card */}
-                                <div className="mx-auto mt-6 max-w-md">
-                                    <div className="grid grid-cols-3 gap-2">
+                                <div className="mx-auto mt-6 max-w-4xl">
+                                    <div className="grid grid-cols-3 gap-2 w-fit mx-auto">
                                         {categories.map((category) => (
                                             <button
                                                 key={category.id}
                                                 onClick={() => setActiveCategory(category.id)}
                                                 className={cn(
-                                                    "rounded-lg border px-3 py-2 text-xs font-medium transition-all duration-150 focus:outline-none",
+                                                    "rounded-lg border px-4 py-2 text-xs font-medium transition-all duration-150 focus:outline-none cursor-pointer flex items-center justify-center min-w-fit",
                                                     activeCategory === category.id
                                                         ? "border-black bg-black text-white"
                                                         : "border-black bg-white text-black hover:bg-gray-50"
@@ -132,12 +132,12 @@ export function HeroSection() {
 }
 
 const categories = [
-    { id: 'health', label: 'Health & Nutrition' },
+    { id: 'fitness', label: 'Fitness' },
     { id: 'personal', label: 'Personal Care' },
     { id: 'beauty', label: 'Beauty & Cosmetics' },
     { id: 'fashion', label: 'Fashion & Apparel' },
     { id: 'supplements', label: 'Nutritional Supplements' },
-    { id: 'fitness', label: 'Fitness' },
+    { id: 'health', label: 'Health & Nutrition' },
 ]
 
 interface ChatMessage {
@@ -146,15 +146,15 @@ interface ChatMessage {
 }
 
 const categoryContent: Record<string, { title: string; icon: string; color: string; messages: ChatMessage[] }> = {
-    health: {
-        title: 'Health & Nutrition',
-        icon: '',
-        color: 'text-green-400',
+    fitness: {
+        title: 'Fitness',
+        icon: '💪',
+        color: 'text-red-400',
         messages: [
-            { role: 'user', message: "What foods help boost immunity?" },
-            { role: 'ai', message: "Citrus fruits, spinach, garlic, and yogurt are great immunity boosters rich in vitamins C and D." },
-            { role: 'user', message: "How much water should I drink daily?" },
-            { role: 'ai', message: "Aim for 8 glasses (2 liters) daily. Increase intake during exercise or hot weather." },
+            { role: 'user', message: "I need a plan for muscle gain." },
+            { role: 'ai', message: "Our 8-week Hypertrophy Protocol is perfect for you." },
+            { role: 'user', message: "Does it include diet?" },
+            { role: 'ai', message: "Yes, complete with our protein stack recommendations." },
         ],
     },
     personal: {
@@ -162,10 +162,10 @@ const categoryContent: Record<string, { title: string; icon: string; color: stri
         icon: '🧴',
         color: 'text-blue-400',
         messages: [
-            { role: 'user', message: "What's the best skincare routine for oily skin?" },
-            { role: 'ai', message: "Use a gentle cleanser, oil-free moisturizer, and salicylic acid treatment. Don't skip sunscreen!" },
-            { role: 'user', message: "How often should I exfoliate?" },
-            { role: 'ai', message: "2-3 times per week is ideal. Over-exfoliating can damage your skin barrier." },
+            { role: 'user', message: "Best set for sensitive skin?" },
+            { role: 'ai', message: "Try our Calming Aloe Kit. It's fragrance-free." },
+            { role: 'user', message: "Can I use it daily?" },
+            { role: 'ai', message: "Absolutely, it's designed for gentle daily use." },
         ],
     },
     beauty: {
@@ -173,10 +173,10 @@ const categoryContent: Record<string, { title: string; icon: string; color: stri
         icon: '',
         color: 'text-pink-400',
         messages: [
-            { role: 'user', message: "How do I make my makeup last all day?" },
-            { role: 'ai', message: "Start with primer, use setting spray, and choose long-wear formulas. Blotting papers help too!" },
-            { role: 'user', message: "What's the right foundation shade for me?" },
-            { role: 'ai', message: "Test on your jawline in natural light. The shade should blend seamlessly with your neck." },
+            { role: 'user', message: "Which red lipstick suits me?" },
+            { role: 'ai', message: "Based on your tone, 'Ruby Velvet' is a match." },
+            { role: 'user', message: "Is it transfer-proof?" },
+            { role: 'ai', message: "Yes, it lasts 12+ hours with zero smudge." },
         ],
     },
     fashion: {
@@ -184,10 +184,10 @@ const categoryContent: Record<string, { title: string; icon: string; color: stri
         icon: '',
         color: 'text-purple-400',
         messages: [
-            { role: 'user', message: "What are the must-have wardrobe basics?" },
-            { role: 'ai', message: "White tee, dark jeans, blazer, little black dress, and quality sneakers form a versatile foundation." },
-            { role: 'user', message: "How do I dress for my body type?" },
-            { role: 'ai', message: "Focus on highlighting your favorite features. A-line dresses and high-waisted pants work for most body types." },
+            { role: 'user', message: "Does this dress run true to size?" },
+            { role: 'ai', message: "It has a slim fit. We suggest sizing up." },
+            { role: 'user', message: "Do you have matching shoes?" },
+            { role: 'ai', message: "Pair it with our 'Luna' strappy heels." },
         ],
     },
     supplements: {
@@ -195,44 +195,47 @@ const categoryContent: Record<string, { title: string; icon: string; color: stri
         icon: '💊',
         color: 'text-orange-400',
         messages: [
-            { role: 'user', message: "Do I need to take vitamin D supplements?" },
-            { role: 'ai', message: "If you have limited sun exposure or low levels, yes. 1000-2000 IU daily is commonly recommended." },
-            { role: 'user', message: "What's the best time to take supplements?" },
-            { role: 'ai', message: "Fat-soluble vitamins with meals, B vitamins in morning, magnesium at night for best absorption." },
+            { role: 'user', message: "Help me focus at work." },
+            { role: 'ai', message: "Our 'NeuroFocus' Nootropic is the best seller." },
+            { role: 'user', message: "Any caffeine in it?" },
+            { role: 'ai', message: "No, it's stimulant-free energy." },
         ],
     },
-    fitness: {
-        title: 'Fitness',
-        icon: '💪',
-        color: 'text-red-400',
+    health: {
+        title: 'Health & Nutrition',
+        icon: '',
+        color: 'text-green-400',
         messages: [
-            { role: 'user', message: "How often should I work out as a beginner?" },
-            { role: 'ai', message: "Start with 3-4 days per week, mixing cardio and strength training. Rest days are crucial for recovery." },
-            { role: 'user', message: "What should I eat before a workout?" },
-            { role: 'ai', message: "A light snack with carbs and protein 1-2 hours before. Try banana with peanut butter or Greek yogurt." },
+            { role: 'user', message: "I'm feeling low energy." },
+            { role: 'ai', message: "Our 'Vitality Green' blend boosts energy naturally." },
+            { role: 'user', message: "Is it vegan?" },
+            { role: 'ai', message: "100% plant-based and gluten-free." },
         ],
     },
 }
 
 const CardContent = ({ activeCategory }: { activeCategory: string }) => {
-    const content = categoryContent[activeCategory] || categoryContent.health
+    const content = categoryContent[activeCategory] || categoryContent.fitness
 
     return (
-        <div className="relative h-52 space-y-3 rounded-[1rem] bg-white/5 p-4 transition-all duration-300 overflow-hidden">
+        <div className="relative h-[16.25rem] space-y-3 rounded-[1rem] bg-white/5 p-4 transition-all duration-300 overflow-hidden">
             <div className={cn("flex items-center gap-1.5", content.color)}>
                 <span className="text-lg">{content.icon}</span>
                 <div className="text-sm font-medium">{content.title}</div>
             </div>
-            <div className="space-y-2">
+            <div className={cn(
+                "space-y-2",
+                activeCategory === 'personal' && "-mt-4"
+            )}>
                 {content.messages.map((msg, index) => (
                     <div key={index} className={cn(
-                        "rounded-lg px-3 py-2 text-xs",
+                        "rounded-lg px-3 py-2 text-xs max-w-[85%]",
                         msg.role === 'user'
-                            ? "bg-muted text-foreground ml-4"
-                            : "bg-gradient-to-r from-indigo-500/20 to-emerald-500/20 text-foreground mr-4"
+                            ? "bg-muted text-foreground ml-auto rounded-tr-sm"
+                            : "bg-gradient-to-r from-indigo-500/20 to-emerald-500/20 text-foreground mr-auto rounded-tl-sm"
                     )}>
                         <span className={cn("font-medium", msg.role === 'ai' ? content.color : "text-muted-foreground")}>
-                            {msg.role === 'user' ? 'You' : 'AI'}:
+                            {msg.role === 'user' ? 'User' : 'AI'}:
                         </span>{' '}
                         {msg.message}
                     </div>
@@ -244,7 +247,7 @@ const CardContent = ({ activeCategory }: { activeCategory: string }) => {
 
 const LogoCloud = () => {
     return (
-        <section className="bg-background pb-16 md:pb-32">
+        <section className="bg-background pb-6 md:pb-12">
             <div className="group relative m-auto max-w-6xl px-6">
                 <div className="flex flex-col items-center md:flex-row">
                     <div className="inline md:max-w-44 md:border-r md:pr-6">

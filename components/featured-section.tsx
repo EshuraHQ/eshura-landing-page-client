@@ -19,7 +19,7 @@ export default function Features() {
     }
 
     return (
-        <section className="py-20 md:py-32 bg-background">
+        <section className="py-6 md:py-12 bg-background">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 md:grid-rows-2">
 
                 {/* 1. MAP - Top Left */}

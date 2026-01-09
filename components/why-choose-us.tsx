@@ -44,9 +44,9 @@ const WhyChooseUs = ({
     ],
 }: Hero45Props) => {
     return (
-        <section className="py-20 md:py-32 bg-background">
+        <section className="py-6 md:py-12 bg-background">
             <div className="container mx-auto max-w-6xl px-6 overflow-hidden">
-                <div className="mb-16 flex flex-col items-center gap-6 text-center">
+                <div className="mb-6 flex flex-col items-center gap-6 text-center">
                     <Badge variant="outline">{badge}</Badge>
                     <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">{heading}</h2>
                 </div>

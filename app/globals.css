@@ -119,6 +119,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -156,9 +157,8 @@
 }
 
 .cpu-line-5 {
-  offset-path: path(
-    "M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -35"
-  );
+  offset-path: path("M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -35"
+    );
   animation-delay: 9s;
   animation-duration: 4s;
 }
@@ -170,9 +170,8 @@
 }
 
 .cpu-line-7 {
-  offset-path: path(
-    "M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 28"
-  );
+  offset-path: path("M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 28"
+    );
   animation-delay: 4s;
   animation-duration: 4s;
 }
@@ -187,6 +186,7 @@
   0% {
     offset-distance: 0%;
   }
+
   100% {
     offset-distance: 100%;
   }
@@ -206,14 +206,12 @@
   position: absolute;
   inset: -2px;
   border-radius: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.4) 0%,
-    rgba(99, 102, 241, 0.5) 25%,
-    rgba(168, 85, 247, 0.4) 50%,
-    rgba(99, 102, 241, 0.5) 75%,
-    rgba(139, 92, 246, 0.4) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(139, 92, 246, 0.4) 0%,
+      rgba(99, 102, 241, 0.5) 25%,
+      rgba(168, 85, 247, 0.4) 50%,
+      rgba(99, 102, 241, 0.5) 75%,
+      rgba(139, 92, 246, 0.4) 100%);
   z-index: -1;
   animation: glow-pulse 8s ease-in-out infinite;
 }
@@ -223,24 +221,38 @@
   position: absolute;
   inset: -6px;
   border-radius: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.15) 0%,
-    rgba(99, 102, 241, 0.2) 25%,
-    rgba(168, 85, 247, 0.15) 50%,
-    rgba(99, 102, 241, 0.2) 75%,
-    rgba(139, 92, 246, 0.15) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(139, 92, 246, 0.15) 0%,
+      rgba(99, 102, 241, 0.2) 25%,
+      rgba(168, 85, 247, 0.15) 50%,
+      rgba(99, 102, 241, 0.2) 75%,
+      rgba(139, 92, 246, 0.15) 100%);
   filter: blur(12px);
   z-index: -2;
   animation: glow-pulse 8s ease-in-out infinite reverse;
 }
 
 @keyframes glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
   }
+
   50% {
     opacity: 1;
   }
+}
+
+/* Dotted Background Pattern */
+.bg-dot-pattern {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Grid Background Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
 }
