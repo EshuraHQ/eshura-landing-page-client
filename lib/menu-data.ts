@@ -72,34 +72,34 @@ export const menuItems: MenuItem[] = [
             ],
         },
     },
-    {
-        name: 'Industries',
-        hasDropdown: true,
-        dropdownContent: {
-            items: [
-                { name: 'E-commerce & Retail', href: '/industries/e-commerce-retail' },
-                { name: 'Healthcare & Clinics', href: '/industries/healthcare-clinics' },
-                { name: 'SaaS & Tech', href: '/industries/saas-tech' },
-                // { name: 'Home Services', href: '/industries/home-services' },
-                // { name: 'Professional Services', href: '/industries/professional-services' },
-                // { name: 'Enterprises', href: '/industries/enterprises' },
-            ],
-        },
-    },
-    {
-        name: 'Technology',
-        hasDropdown: true,
-        dropdownContent: {
-            items: [
-                { name: 'Agentic Architecture', href: '/technology/agentic-architecture' },
-                { name: 'RAG & Vector Databases', href: '/technology/rag' },
-                { name: 'LLMs & Fine-Tuning', href: '/technology/llm' },
-                { name: 'Voice AI Stack', href: '/technology/voice' },
-                { name: 'Integrations', href: '/technology/integration' },
-                { name: 'Security & Compliance', href: '/technology/security' },
-            ],
-        },
-    },
+    // {
+    //     name: 'Industries',
+    //     hasDropdown: true,
+    //     dropdownContent: {
+    //         items: [
+    //             { name: 'E-commerce & Retail', href: '/industries/e-commerce-retail' },
+    //             { name: 'Healthcare & Clinics', href: '/industries/healthcare-clinics' },
+    //             { name: 'SaaS & Tech', href: '/industries/saas-tech' },
+    //             // { name: 'Home Services', href: '/industries/home-services' },
+    //             // { name: 'Professional Services', href: '/industries/professional-services' },
+    //             // { name: 'Enterprises', href: '/industries/enterprises' },
+    //         ],
+    //     },
+    // },
+    // {
+    //     name: 'Technology',
+    //     hasDropdown: true,
+    //     dropdownContent: {
+    //         items: [
+    //             { name: 'Agentic Architecture', href: '/technology/agentic-architecture' },
+    //             { name: 'RAG & Vector Databases', href: '/technology/rag' },
+    //             { name: 'LLMs & Fine-Tuning', href: '/technology/llm' },
+    //             { name: 'Voice AI Stack', href: '/technology/voice' },
+    //             { name: 'Integrations', href: '/technology/integration' },
+    //             { name: 'Security & Compliance', href: '/technology/security' },
+    //         ],
+    //     },
+    // },
     // {
     //     name: 'Resources',
     //     hasDropdown: true,

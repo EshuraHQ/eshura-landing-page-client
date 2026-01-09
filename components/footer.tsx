@@ -22,6 +22,10 @@ export function Footer() {
         setMounted(true)
     }, [])
 
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light')
+    }
+
     return (
         <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
             <div className="container mx-auto px-4 py-20 md:py-32 md:px-6 lg:px-8">
@@ -146,6 +150,9 @@ export function Footer() {
                                 Toggle dark mode
                             </Label>
                         </div>
+
+
+                        
                     </div>
                 </div>
                 <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">

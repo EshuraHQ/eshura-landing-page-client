@@ -28,9 +28,9 @@ export function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark')
-    }
+    // const toggleTheme = () => {
+    //     setTheme(theme === 'dark' ? 'light' : 'dark')
+    // }
 
     return (
         <header>
@@ -190,7 +190,7 @@ export function Navbar() {
                                     </Link>
                                 </Button>
                                 {/* Theme Toggle Button */}
-                                <button
+                                {/* <button
                                     onClick={toggleTheme}
                                     aria-label="Toggle theme"
                                     className="flex h-8 w-8 items-center justify-center rounded-lg border bg-background text-foreground transition-colors hover:bg-muted">
@@ -199,7 +199,7 @@ export function Navbar() {
                                     ) : (
                                         <Moon className="size-4" />
                                     )}
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>
