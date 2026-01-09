@@ -13,12 +13,12 @@ import { menuItems } from "@/lib/menu-data"
 export function Navbar() {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
-    const { theme, setTheme } = useTheme()
-    const [mounted, setMounted] = React.useState(false)
+    // const { theme, setTheme } = useTheme()
+    // const [mounted, setMounted] = React.useState(false)
 
-    React.useEffect(() => {
-        setMounted(true)
-    }, [])
+    // React.useEffect(() => {
+    //     setMounted(true)
+    // }, [])
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -65,7 +65,7 @@ export function Navbar() {
                                     <li key={item.name} className="relative group/menu">
                                         {item.hasDropdown ? (
                                             <>
-                                                <button className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150">
+                                                <button className="cursor-pointer text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150">
                                                     <span>{item.name}</span>
                                                     <ChevronDown className="size-3 transition-transform group-hover/menu:rotate-180" />
                                                 </button>
