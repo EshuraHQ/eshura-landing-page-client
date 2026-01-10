@@ -24,7 +24,7 @@ export const Cta = ({
     title = "Ready to Transform Your Business?",
     description = "Join hundreds of companies already using AI agents to automate operations, reduce costs, and scale their business.",
     buttonText = "Book a Demo",
-    buttonUrl = "#",
+    buttonUrl = "/contact",
     items = defaultItems,
 }: Cta4Props) => {
     return (

@@ -251,86 +251,58 @@ const LogoCloud = () => {
             <div className="group relative m-auto max-w-6xl px-6">
                 <div className="flex flex-col items-center md:flex-row">
                     <div className="inline md:max-w-44 md:border-r md:pr-6">
-                        <p className="text-end text-sm">Powering the best teams</p>
+                        <p className="text-end text-sm">Powered by the Best Tools</p>
                     </div>
                     <div className="relative py-6 md:w-[calc(100%-11rem)]">
                         <InfiniteSlider
                             durationOnHover={75}
                             duration={60}
                             gap={112}>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                    alt="Nvidia Logo"
-                                    height="20"
-                                    width="auto"
-                                />
+                            {/* LlamaIndex */}
+                            <div className="flex items-center gap-2">
+                                <svg className="h-7 w-7 opacity-70" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                                </svg>
+                                <span className="text-lg font-semibold tracking-tight opacity-70">LlamaIndex</span>
                             </div>
-
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/column.svg"
-                                    alt="Column Logo"
-                                    height="16"
-                                    width="auto"
-                                />
+                            {/* n8n */}
+                            <div className="flex items-center gap-2">
+                                <svg className="h-7 w-7 opacity-70" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M4 8c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V8zm0 6c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-2zm10-6c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V8z" />
+                                </svg>
+                                <span className="text-lg font-bold tracking-tight opacity-70">n8n</span>
                             </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/github.svg"
-                                    alt="GitHub Logo"
-                                    height="16"
-                                    width="auto"
-                                />
+                            {/* LangGraph */}
+                            <div className="flex items-center gap-2">
+                                <svg className="h-7 w-7 opacity-70" viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="6" cy="6" r="3" />
+                                    <circle cx="18" cy="6" r="3" />
+                                    <circle cx="12" cy="18" r="3" />
+                                    <path d="M6 9v6l6 3M18 9v6l-6 3" stroke="currentColor" strokeWidth="2" fill="none" />
+                                </svg>
+                                <span className="text-lg font-semibold tracking-tight opacity-70">LangGraph</span>
                             </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nike.svg"
-                                    alt="Nike Logo"
-                                    height="20"
-                                    width="auto"
-                                />
+                            {/* crewAI */}
+                            <div className="flex items-center">
+                                <span className="text-lg tracking-tight opacity-70"><em>crew</em><span className="font-bold">AI</span></span>
                             </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                    alt="Lemon Squeezy Logo"
-                                    height="20"
-                                    width="auto"
-                                />
+                            {/* LangChain */}
+                            <div className="flex items-center gap-2">
+                                <svg className="h-7 w-7 opacity-70" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 6a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8v8M18 8v8M8 6h8M8 18h8" />
+                                </svg>
+                                <span className="text-lg font-semibold tracking-tight opacity-70">LangChain</span>
                             </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                    alt="Laravel Logo"
-                                    height="16"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-7 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                    alt="Lilly Logo"
-                                    height="28"
-                                    width="auto"
-                                />
-                            </div>
-
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-6 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/openai.svg"
-                                    alt="OpenAI Logo"
-                                    height="24"
-                                    width="auto"
-                                />
+                            {/* Opal */}
+                            <div className="flex items-center gap-2">
+                                <svg className="h-7 w-7 opacity-70" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                                    <circle cx="12" cy="12" r="5" />
+                                </svg>
+                                <span className="text-lg font-semibold tracking-tight opacity-70">Opal</span>
                             </div>
                         </InfiniteSlider>
 

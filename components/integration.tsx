@@ -58,7 +58,7 @@ export const Integration = ({
     description = "Our AI agents integrate seamlessly with your existing tech stack. Connect to CRMs, ERPs, databases, and communication platforms with just a few clicks.",
     buttonPrimary = {
         label: "Book a Demo",
-        href: "#",
+        href: "/contact",
     },
     buttonSecondary = {
         label: "View Integrations",

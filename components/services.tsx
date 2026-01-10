@@ -3,8 +3,10 @@
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { BorderBeam } from "@/components/border-beam"
+import { InfiniteGridBackground } from "@/components/ui/infinite-grid-background"
+import { FeatureSection } from "@/components/ui/feature-section"
 import {
     Mic,
     Mail,
@@ -12,197 +14,142 @@ import {
     Lightbulb,
     BarChart3,
     TrendingUp,
+    Target,
+    Clock,
+    Zap,
+    MessageSquare,
+    Calendar,
+    Bell,
+    Phone,
+    FileText,
     Database,
-    Boxes,
-    Download,
-    ArrowUpRight,
-    ArrowDownRight,
-    Users,
-    DollarSign,
-    ShoppingCart,
-    Activity
+    Shield,
+    Search,
+    CheckCircle
 } from "lucide-react"
 
 const tabData = {
     sales: {
-        challenges: [
-            "High lead response latency causing drop-offs",
-            "Inconsistent follow-up on cold inquiries",
-            "Difficulty qualifying leads at scale 24/7"
-        ],
-        solutions: [
-            "Instant 24/7 engagement to capture every lead",
-            "Automated qualification reduces sales cycle time",
-            "Personalized recommendations drive higher AOV"
+        badge: "Sales Automation",
+        heading: (
+            <>
+                <span className="text-foreground font-medium">Capture every lead instantly.</span>{" "}
+                Our AI sales agents engage prospects 24/7, qualify leads automatically, and deliver personalized recommendations that drive higher conversion rates and average order value.
+            </>
+        ),
+        badges: ["24/7 Engagement", "Smart Qualification", "Higher AOV"],
+        tasks: [
+            { title: "Lead Capture", subtitle: "Instant engagement on arrival", icon: <Target className="w-4 h-4 text-indigo-400" /> },
+            { title: "Auto Qualification", subtitle: "Score and prioritize leads", icon: <CheckCircle className="w-4 h-4 text-green-400" /> },
+            { title: "Personalized Outreach", subtitle: "Tailored recommendations", icon: <MessageSquare className="w-4 h-4 text-purple-400" /> },
+            { title: "Follow-up Automation", subtitle: "Never miss a follow-up", icon: <Clock className="w-4 h-4 text-blue-400" /> },
+            { title: "CRM Integration", subtitle: "Sync with your tools", icon: <Database className="w-4 h-4 text-orange-400" /> },
         ]
     },
     support: {
-        challenges: [
-            "Teams overwhelmed by repetitive L1 queries",
-            "Rising operational costs per support ticket",
-            "Long wait times leading to customer churn"
-        ],
-        solutions: [
-            "Instant resolution of 70%+ of routine inquiries",
-            "Multi-channel support with consistent brand voice",
-            "Seamless human handoff for complex escalations"
+        badge: "Customer Support",
+        heading: (
+            <>
+                <span className="text-foreground font-medium">Resolve inquiries instantly.</span>{" "}
+                AI-powered support agents handle 70%+ of routine queries, deliver consistent brand voice across channels, and seamlessly escalate complex issues to human agents.
+            </>
+        ),
+        badges: ["70% Auto-Resolution", "Multi-Channel", "Smart Escalation"],
+        tasks: [
+            { title: "Instant Responses", subtitle: "Zero wait time support", icon: <Zap className="w-4 h-4 text-yellow-400" /> },
+            { title: "FAQ Automation", subtitle: "Handle common questions", icon: <MessageSquare className="w-4 h-4 text-blue-400" /> },
+            { title: "Ticket Routing", subtitle: "Smart issue categorization", icon: <Target className="w-4 h-4 text-indigo-400" /> },
+            { title: "Human Handoff", subtitle: "Seamless escalation", icon: <Phone className="w-4 h-4 text-green-400" /> },
+            { title: "Sentiment Analysis", subtitle: "Track customer mood", icon: <BarChart3 className="w-4 h-4 text-purple-400" /> },
         ]
     },
     booking: {
-        challenges: [
-            "Manual scheduling errors and double-bookings",
-            "High no-show rates due to lack of reminders",
-            "Friction in scheduling high-value consultations"
-        ],
-        solutions: [
-            "Frictionless chat-based booking and rescheduling",
-            "Automated reminders and direct calendar sync",
-            "Reduced administrative burden on front-desk staff"
+        badge: "Booking & Scheduling",
+        heading: (
+            <>
+                <span className="text-foreground font-medium">Eliminate scheduling friction.</span>{" "}
+                AI booking agents handle appointments via chat, sync directly with calendars, send automated reminders, and reduce no-show rates dramatically.
+            </>
+        ),
+        badges: ["Chat Booking", "Calendar Sync", "Auto Reminders"],
+        tasks: [
+            { title: "Chat Scheduling", subtitle: "Book via conversation", icon: <Calendar className="w-4 h-4 text-blue-400" /> },
+            { title: "Calendar Sync", subtitle: "Real-time availability", icon: <Clock className="w-4 h-4 text-green-400" /> },
+            { title: "Reminders", subtitle: "Reduce no-shows", icon: <Bell className="w-4 h-4 text-yellow-400" /> },
+            { title: "Rescheduling", subtitle: "Easy modification", icon: <TrendingUp className="w-4 h-4 text-purple-400" /> },
+            { title: "Confirmation", subtitle: "Instant booking proof", icon: <CheckCircle className="w-4 h-4 text-indigo-400" /> },
         ]
     },
     voice: {
-        challenges: [
-            "Missed revenue from unanswered phone calls",
-            "High cost of 24/7 bilingual phone support",
-            "Lack of structured data from voice inquiries"
-        ],
-        solutions: [
-            "Intelligent inbound answering and outbound routing",
-            "Human-like voice quality with zero hold times",
-            "Direct CRM logging of all voice conversation data"
+        badge: "Voice Agents",
+        heading: (
+            <>
+                <span className="text-foreground font-medium">Never miss a call again.</span>{" "}
+                Intelligent voice agents answer inbound calls, route queries, and log all conversation data directly to your CRM—with human-like quality and zero hold times.
+            </>
+        ),
+        badges: ["24/7 Answering", "Zero Hold Time", "CRM Logging"],
+        tasks: [
+            { title: "Inbound Calls", subtitle: "Intelligent answering", icon: <Phone className="w-4 h-4 text-green-400" /> },
+            { title: "Call Routing", subtitle: "Smart queue management", icon: <Target className="w-4 h-4 text-blue-400" /> },
+            { title: "Voice Quality", subtitle: "Human-like interaction", icon: <Mic className="w-4 h-4 text-purple-400" /> },
+            { title: "Data Capture", subtitle: "Log to CRM instantly", icon: <Database className="w-4 h-4 text-orange-400" /> },
+            { title: "Multilingual", subtitle: "Support any language", icon: <MessageSquare className="w-4 h-4 text-indigo-400" /> },
         ]
     },
     email: {
-        challenges: [
-            "Inbox silos causing slow response times",
-            "Critical inquiries lost in massive mail volumes",
-            "Time-intensive manual email triaging"
-        ],
-        solutions: [
-            "Automated drafting and categorization of emails",
-            "Proactive outreach based on specific triggers",
-            "Zero-backlog inbox management for key accounts"
+        badge: "Email Agents",
+        heading: (
+            <>
+                <span className="text-foreground font-medium">Conquer inbox overload.</span>{" "}
+                AI email agents auto-draft responses, categorize messages, prioritize critical inquiries, and enable zero-backlog inbox management for your team.
+            </>
+        ),
+        badges: ["Auto-Drafting", "Smart Triage", "Zero Backlog"],
+        tasks: [
+            { title: "Email Drafting", subtitle: "AI-written responses", icon: <FileText className="w-4 h-4 text-blue-400" /> },
+            { title: "Categorization", subtitle: "Auto-sort messages", icon: <Target className="w-4 h-4 text-purple-400" /> },
+            { title: "Priority Inbox", subtitle: "Surface critical items", icon: <Bell className="w-4 h-4 text-yellow-400" /> },
+            { title: "Follow-ups", subtitle: "Trigger-based outreach", icon: <Clock className="w-4 h-4 text-green-400" /> },
+            { title: "Templates", subtitle: "Consistent messaging", icon: <MessageSquare className="w-4 h-4 text-indigo-400" /> },
         ]
     },
     rag: {
-        challenges: [
-            "Standard AI providing generic or hallucinated info",
-            "Proprietary data locked in complex file formats",
-            "Security concerns with public AI models"
-        ],
-        solutions: [
-            "Grounded answers using your secure knowledge base",
-            "Real-time retrieval of internal business documents",
-            "Reliable and accurate logic for complex use cases"
+        badge: "Custom RAG",
+        heading: (
+            <>
+                <span className="text-foreground font-medium">Unlock your proprietary data.</span>{" "}
+                Custom RAG solutions ground AI answers in your secure knowledge base, retrieve internal documents in real-time, and deliver accurate, hallucination-free responses.
+            </>
+        ),
+        badges: ["Secure Knowledge", "Real-time Retrieval", "Zero Hallucination"],
+        tasks: [
+            { title: "Knowledge Base", subtitle: "Your data, AI-powered", icon: <Database className="w-4 h-4 text-blue-400" /> },
+            { title: "Document Search", subtitle: "Instant retrieval", icon: <Search className="w-4 h-4 text-purple-400" /> },
+            { title: "Secure Access", subtitle: "Enterprise-grade security", icon: <Shield className="w-4 h-4 text-green-400" /> },
+            { title: "Grounded Answers", subtitle: "No hallucinations", icon: <CheckCircle className="w-4 h-4 text-indigo-400" /> },
+            { title: "Multi-format", subtitle: "PDF, docs, and more", icon: <FileText className="w-4 h-4 text-orange-400" /> },
         ]
     }
 }
 
-const PhoneMockup = () => (
-    <div className="flex justify-center">
-        <div className="w-64 bg-white rounded-[2.5rem] p-2 shadow-2xl border border-gray-200">
-            <div className="bg-gray-50 rounded-[2rem] overflow-hidden">
-                <div className="bg-white h-6 flex items-center justify-center">
-                    <div className="w-20 h-1.5 bg-gray-200 rounded-full" />
-                </div>
-                <div className="bg-white px-4 py-3 border-b border-gray-100">
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xs font-medium">AI</div>
-                        <div>
-                            <div className="text-sm font-semibold text-gray-900">Shopping Assistant</div>
-                            <div className="text-xs text-green-500 flex items-center gap-1">
-                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                                Online
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-gray-50 px-3 py-4 space-y-3 h-64 overflow-hidden">
-                    <div className="flex gap-2">
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shrink-0" />
-                        <div className="bg-white rounded-2xl rounded-tl-sm px-3 py-2 max-w-[80%] shadow-sm">
-                            <p className="text-xs text-gray-700">Hi! How can I help you today?</p>
-                        </div>
-                    </div>
-                    <div className="flex justify-end">
-                        <div className="bg-indigo-500 text-white rounded-2xl rounded-tr-sm px-3 py-2 max-w-[80%]">
-                            <p className="text-xs">I have dry skin. Suggest a moisturizer.</p>
-                        </div>
-                    </div>
-                    <div className="flex gap-2">
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shrink-0" />
-                        <div className="bg-white rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%] shadow-sm">
-                            <p className="text-xs text-gray-700 mb-2">For dry skin, I highly recommend our Intense Hydration Cream.</p>
-                            <div className="bg-gray-50 rounded-lg p-2 border border-gray-100">
-                                <div className="flex gap-2">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-gray-200 to-gray-300 rounded-md shrink-0" />
-                                    <div>
-                                        <p className="text-xs font-medium text-gray-900">Intense Hydration Cream</p>
-                                        <p className="text-[10px] text-gray-500">Deep moisture for 24hrs</p>
-                                        <p className="text-xs font-semibold text-indigo-600 mt-1">$29.99</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white px-3 py-3 border-t border-gray-100">
-                    <div className="bg-gray-100 rounded-full px-4 py-2 flex items-center">
-                        <span className="text-xs text-gray-400">Message Shopping Assistant...</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-)
-
-const TabLayout = ({ challenges, solutions }: { challenges: string[], solutions: string[] }) => (
+const TabLayout = ({ data }: { data: typeof tabData.sales }) => (
     <Card className="glow-edge-container relative overflow-visible border-0">
         <BorderBeam size={300} duration={12} colorFrom="#6366f1" colorTo="#8b5cf6" />
-        <CardContent className="p-8 md:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                <div className="space-y-6">
-                    <h3 className="text-xl font-semibold text-foreground">Critical Challenges</h3>
-                    <div className="space-y-4">
-                        {challenges.map((c, i) => (
-                            <div key={i} className="flex items-start gap-3">
-                                <div className="w-2 h-2 rounded-full bg-indigo-500 mt-2 shrink-0" />
-                                <p className="text-muted-foreground text-sm">{c}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <PhoneMockup />
-
-                <div className="space-y-6 flex flex-col h-full">
-                    <div>
-                        <h3 className="text-xl font-semibold text-foreground">AI-Powered Solution & Outcomes</h3>
-                        <div className="space-y-4 mt-6">
-                            {solutions.map((s, i) => (
-                                <div key={i} className="flex items-start gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2 shrink-0" />
-                                    <p className="text-muted-foreground text-sm">{s}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="mt-auto flex justify-end">
-                        <Button className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white cursor-pointer">
-                            Learn More
-                        </Button>
-                    </div>
-                </div>
-            </div>
+        <CardContent className="p-6 md:p-10">
+            <FeatureSection
+                tasks={data.tasks}
+                badge={data.badge}
+                heading={data.heading}
+                badges={data.badges}
+            />
         </CardContent>
     </Card>
 )
 
 export function Services() {
     return (
-        <section className="relative bg-background py-4 md:py-6 overflow-hidden">
-            <div className="absolute inset-0 -z-10 bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)] opacity-50" />
-
+        <InfiniteGridBackground className="py-4 md:py-6">
             <div className="mx-auto max-w-6xl px-6">
                 <div className="text-center mb-6">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-3">
@@ -246,30 +193,30 @@ export function Services() {
                     </div>
 
                     <TabsContent value="sales" className="mt-0">
-                        <TabLayout {...tabData.sales} />
+                        <TabLayout data={tabData.sales} />
                     </TabsContent>
 
                     <TabsContent value="support" className="mt-0">
-                        <TabLayout {...tabData.support} />
+                        <TabLayout data={tabData.support} />
                     </TabsContent>
 
                     <TabsContent value="booking" className="mt-0">
-                        <TabLayout {...tabData.booking} />
+                        <TabLayout data={tabData.booking} />
                     </TabsContent>
 
                     <TabsContent value="voice" className="mt-0">
-                        <TabLayout {...tabData.voice} />
+                        <TabLayout data={tabData.voice} />
                     </TabsContent>
 
                     <TabsContent value="email" className="mt-0">
-                        <TabLayout {...tabData.email} />
+                        <TabLayout data={tabData.email} />
                     </TabsContent>
 
                     <TabsContent value="rag" className="mt-0">
-                        <TabLayout {...tabData.rag} />
+                        <TabLayout data={tabData.rag} />
                     </TabsContent>
                 </Tabs>
-            </div >
-        </section >
+            </div>
+        </InfiniteGridBackground>
     )
 }

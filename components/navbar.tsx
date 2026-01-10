@@ -177,7 +177,7 @@ export function Navbar() {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
+                                    <Link href="/contact">
                                         <span>Book a Demo</span>
                                     </Link>
                                 </Button>
@@ -185,7 +185,7 @@ export function Navbar() {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
+                                    <Link href="/contact">
                                         <span>Book a Demo</span>
                                     </Link>
                                 </Button>

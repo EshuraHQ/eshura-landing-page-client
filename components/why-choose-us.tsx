@@ -2,6 +2,7 @@ import { HandHelping, Users, Zap } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { InfiniteGridBackground } from "@/components/ui/infinite-grid-background";
 
 interface Feature {
     icon: React.ReactNode;
@@ -44,7 +45,7 @@ const WhyChooseUs = ({
     ],
 }: Hero45Props) => {
     return (
-        <section className="py-6 md:py-12 bg-background">
+        <InfiniteGridBackground className="py-6 md:py-12">
             <div className="container mx-auto max-w-6xl px-6 overflow-hidden">
                 <div className="mb-6 flex flex-col items-center gap-6 text-center">
                     <Badge variant="outline">{badge}</Badge>
@@ -82,7 +83,7 @@ const WhyChooseUs = ({
                     ))}
                 </div>
             </div>
-        </section>
+        </InfiniteGridBackground>
     );
 };
 
