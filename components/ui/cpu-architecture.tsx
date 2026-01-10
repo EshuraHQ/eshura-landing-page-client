@@ -17,7 +17,7 @@ const CpuArchitecture = ({
     className,
     width = "100%",
     height = "100%",
-    text = "CPU",
+    text = "LLM",
     showCpuConnections = true,
     animateText = true,
     lineMarkerSize = 18,

@@ -55,19 +55,19 @@ export function Footer() {
                     <div>
                         <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
                         <nav className="space-y-2 text-sm">
-                            <a href="#" className="block transition-colors hover:text-primary">
+                            <a href="/" className="block transition-colors hover:text-primary">
                                 Home
                             </a>
-                            <a href="#" className="block transition-colors hover:text-primary">
+                            <a href="/company" className="block transition-colors hover:text-primary">
                                 About Us
                             </a>
-                            <a href="#" className="block transition-colors hover:text-primary">
+                            {/* <a href="#" className="block transition-colors hover:text-primary">
                                 Services
-                            </a>
-                            <a href="#" className="block transition-colors hover:text-primary">
+                            </a> */}
+                            <a href="/products/sales-agents/lead-generation" className="block transition-colors hover:text-primary">
                                 Products
                             </a>
-                            <a href="#" className="block transition-colors hover:text-primary">
+                            <a href="/contact" className="block transition-colors hover:text-primary">
                                 Contact
                             </a>
                         </nav>
@@ -75,10 +75,10 @@ export function Footer() {
                     <div>
                         <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
                         <address className="space-y-2 text-sm not-italic">
-                            <p>123 Innovation Street</p>
-                            <p>Tech City, TC 12345</p>
-                            <p>Phone: (123) 456-7890</p>
-                            <p>Email: hello@example.com</p>
+                            {/* <p>123 Innovation Street</p> */}
+                            <p>Kolkata, India</p>
+                            <p>Phone: +91 9875591127</p>
+                            <p>Email: contact@eshura.com</p>
                         </address>
                     </div>
                     <div className="relative">

@@ -3,7 +3,6 @@ import { FeatureHero } from "@/components/product/feature-hero";
 import { FeaturesGrid } from "@/components/product/features-grid";
 import { ProductFaq } from "@/components/product/faq";
 import { ProductCta } from "@/components/product/cta";
-import { Footer } from "@/components/footer";
 import { menuItems } from "@/lib/menu-data";
 import { productData } from "@/lib/product-data";
 import { ProductHero } from "@/components/product/hero-section";
@@ -47,7 +46,7 @@ export default async function ProductPage({ params }: PageProps) {
     }
 
     return (
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="min-h-screen bg-grid-pattern text-foreground">
             <ProductHero
                 title={data.title}
                 subtitle={data.subtitle}

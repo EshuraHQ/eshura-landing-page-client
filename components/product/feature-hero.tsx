@@ -32,7 +32,7 @@ export const FeatureHero = ({
     features = []
 }: FeatureHeroProps) => {
     return (
-        <section className="py-24 bg-muted/30">
+        <section className="py-24 bg-background">
             <div className="container mx-auto px-6 overflow-hidden">
                 <div className="mb-16 flex flex-col items-center gap-6 text-center max-w-3xl mx-auto">
                     <Badge variant="outline" className="px-4 py-1">{badge}</Badge>

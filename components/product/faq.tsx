@@ -19,7 +19,7 @@ export const ProductFaq = ({
     faqs = []
 }: FaqProps) => {
     return (
-        <section className="py-24 bg-muted/30">
+        <section className="py-24">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <Badge variant="outline" className="mb-4">{badge}</Badge>

@@ -1,42 +1,5 @@
-"use client"
-
 import { Button } from "@/components/ui/button";
-import dynamic from "next/dynamic";
-
-const IconCloud = dynamic(() => import("@/components/interactive-icon-cloud").then(mod => ({ default: mod.IconCloud })), { ssr: false });
-
-const iconSlugs = [
-    "typescript",
-    "javascript",
-    "dart",
-    "java",
-    "react",
-    "flutter",
-    "android",
-    "html5",
-    "css3",
-    "nodedotjs",
-    "express",
-    "nextdotjs",
-    "prisma",
-    "amazonaws",
-    "postgresql",
-    "firebase",
-    "nginx",
-    "vercel",
-    "testinglibrary",
-    "jest",
-    "cypress",
-    "docker",
-    "git",
-    "jira",
-    "github",
-    "gitlab",
-    "visualstudiocode",
-    "androidstudio",
-    "sonarqube",
-    "figma",
-];
+import { CpuArchitecture } from "@/components/ui/cpu-architecture";
 
 interface Feature2Props {
     heading?: string;
@@ -53,9 +16,10 @@ interface Feature2Props {
 }
 
 export const Integration = ({
-    heading = "Seamless Integration",
-    title = "Connect with Your Favorite Tools",
-    description = "Our AI agents integrate seamlessly with your existing tech stack. Connect to CRMs, ERPs, databases, and communication platforms with just a few clicks.",
+    heading = "LLM-Powered Seamless Integration",
+    title = "Add LLMs to Your Existing Systems",
+    description = "Integrate large language models into your current tools, data, and workflows to build intelligent agents—without changing your core infrastructure.",
+
     buttonPrimary = {
         label: "Book a Demo",
         href: "/contact",
@@ -67,18 +31,18 @@ export const Integration = ({
 }: Feature2Props) => {
     return (
         <section className="py-6 md:py-12 bg-background">
-            <div className="container mx-auto max-w-6xl px-6">
+            <div className="container mx-auto max-w-6xl px-6 flex flex-col gap-14">
                 {/* Section Heading */}
-                <div className="text-center mb-6">
+                <div className="text-center mb-12">
                     <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
                         {heading}
                     </h2>
                 </div>
 
                 <div className="grid items-center gap-8 md:gap-16 lg:grid-cols-2">
-                    {/* IconCloud replacing the image */}
+                    {/* CpuArchitecture replacing the image */}
                     <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg border bg-background px-10 pb-10 pt-4 mx-auto">
-                        <IconCloud iconSlugs={iconSlugs} />
+                        <CpuArchitecture />
                     </div>
 
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
