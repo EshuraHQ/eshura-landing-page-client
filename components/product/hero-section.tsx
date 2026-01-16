@@ -60,7 +60,7 @@ export function ProductHero({
                         </div>
                     </div>
                 </section>
-                <section className="pb-16">
+                <section className="pb-16 px-32">
                     <InfiniteSlider
                     durationOnHover={75}
                     duration={60}

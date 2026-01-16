@@ -2,15 +2,16 @@
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { About } from "@/components/company/company-about";
+import { TeamSection } from "@/components/company/team-section";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import FeaturedSectionStats from "@/components/company/featured-section-stats";
+// import FeaturedSectionStats from "@/components/company/featured-section-stats";
 
 export default function CompanyPage() {
     return (
         <>
 
-            <div className="w-full scroll-smooth pt-35">
+            <div className="w-full scroll-smooth pt-24">
                 {/* 1. Hero Section with Sparkles */}
                 <section id="hero" className="h-[40rem] w-full bg-background flex flex-col items-center justify-center overflow-hidden relative">
                     <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-foreground relative z-20">
@@ -38,7 +39,6 @@ export default function CompanyPage() {
                     </div>
                 </section>
 
-                {/* 2. About Us Section */}
                 <section id="about" className="bg-background">
                     <About
                         title="About Eshura"
@@ -46,10 +46,13 @@ export default function CompanyPage() {
                     />
                 </section>
 
+                {/* 3. Team Section */}
+                <TeamSection />
+
                 {/* 3. Vision & Mission Section (Stats) */}
-                <section id="vision" className="bg-background">
+                {/* <section id="vision" className="bg-background">
                     <FeaturedSectionStats />
-                </section>
+                </section> */}
 
                 {/* 4. Contact Us Section (Background Beams) */}
                 <section id="contact" className="h-[40rem] w-full bg-background relative flex flex-col items-center justify-center antialiased">

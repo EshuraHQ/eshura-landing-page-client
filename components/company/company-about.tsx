@@ -93,7 +93,7 @@ export const About = ({
     achievements = defaultAchievements,
 }: About3Props = {}) => {
     return (
-        <section className="py-32">
+        <section className="py-24">
             <div className="container mx-auto">
                 <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
                     <h1 className="text-5xl font-semibold">{title}</h1>
