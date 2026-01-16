@@ -72,20 +72,23 @@ export const menuItems: MenuItem[] = [
             ],
         },
     },
-    // {
-    //     name: 'Industries',
-    //     hasDropdown: true,
-    //     dropdownContent: {
-    //         items: [
-    //             { name: 'E-commerce & Retail', href: '/industries/e-commerce-retail' },
-    //             { name: 'Healthcare & Clinics', href: '/industries/healthcare-clinics' },
-    //             { name: 'SaaS & Tech', href: '/industries/saas-tech' },
-    //             // { name: 'Home Services', href: '/industries/home-services' },
-    //             // { name: 'Professional Services', href: '/industries/professional-services' },
-    //             // { name: 'Enterprises', href: '/industries/enterprises' },
-    //         ],
-    //     },
-    // },
+    {
+        name: 'Industries',
+        hasDropdown: true,
+        dropdownContent: {
+            items: [
+                { name: 'E-Commerce & Online Retail', href: '/industries/e-commerce-retail' },
+                { name: 'Home Services & Field Services', href: '/industries/home-field-services' },
+                { name: 'Restaurants & Food Services', href: '/industries/restaurants-food' },
+                { name: 'Healthcare & Medical Practices', href: '/industries/healthcare-medical' },
+                { name: 'Beauty, Salons & Wellness', href: '/industries/beauty-wellness' },
+                { name: 'Real Estate', href: '/industries/real-estate' },
+                { name: 'Automotive Services', href: '/industries/automotive' },
+                { name: 'Professional Services', href: '/industries/professional-services' },
+                { name: 'Education & Coaching', href: '/industries/education-coaching' },
+            ],
+        },
+    },
     // {
     //     name: 'Technology',
     //     hasDropdown: true,
@@ -114,13 +117,26 @@ export const menuItems: MenuItem[] = [
     // },
     {
         name: 'Company',
-        hasDropdown: true,
-        dropdownContent: {
-            items: [
-                { name: 'About Us', href: '/company#about' },
-                { name: 'Vision & Mission', href: '/company#vision' },
-                { name: 'Contact', href: '/company#contact' },
-            ],
-        },
+        hasDropdown: false,
+        href: '/company',
+        // dropdownContent: {
+        //     items: [
+        //         { name: 'About Us', href: '/company#about' },
+        //         { name: 'Vision & Mission', href: '/company#vision' },
+        //         { name: 'Contact', href: '/company#contact' },
+        //     ],
+        // },
+    },
+    {
+        name: 'journal',
+        hasDropdown: false,
+        href: '/journal',
+        // dropdownContent: {
+        //     items: [
+        //         { name: 'About Us', href: '/company#about' },
+        //         { name: 'Vision & Mission', href: '/company#vision' },
+        //         { name: 'Contact', href: '/company#contact' },
+        //     ],
+        // },
     },
 ]

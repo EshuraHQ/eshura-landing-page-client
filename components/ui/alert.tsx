@@ -6,10 +6,10 @@ const alertVariants = cva("relative rounded-lg border", {
     variants: {
         variant: {
             default: "border-border bg-background",
-            warning: "border-amber-500/50 text-amber-600",
-            error: "border-red-500/50 text-red-600",
-            success: "border-emerald-500/50",
-            info: "border-blue-500/50 text-blue-600",
+            warning: "border-amber-500/50 text-amber-600 dark:text-amber-500",
+            error: "border-red-500/50 text-red-600 dark:text-red-500",
+            success: "border-emerald-500/50 text-emerald-600 dark:text-emerald-500",
+            info: "border-blue-500/50 text-blue-600 dark:text-blue-500",
         },
         size: {
             sm: "px-4 py-3",
@@ -94,7 +94,7 @@ const AlertTitle = React.forwardRef<
     HTMLParagraphElement,
     React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-    <h5 ref={ref} className={cn("text-sm font-medium", className)} {...props} />
+    <h5 ref={ref} className={cn("text-sm font-medium leading-none tracking-tight", className)} {...props} />
 ))
 AlertTitle.displayName = "AlertTitle"
 
@@ -104,7 +104,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <div
         ref={ref}
-        className={cn("text-sm text-muted-foreground", className)}
+        className={cn("text-sm [&_p]:leading-relaxed", className)}
         {...props}
     />
 ))
