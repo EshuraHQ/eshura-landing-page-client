@@ -212,8 +212,8 @@ const GRID_CONFIG = {
         color: "#6D28D9",
         maxOpacity: 0.15,
         flickerChance: 0.12,
-        squareSize: 4,
-        gridGap: 4,
+        squareSize: 5,
+        gridGap: 5,
     },
 } as const;
 

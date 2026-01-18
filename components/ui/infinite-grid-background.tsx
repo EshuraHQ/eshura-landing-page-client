@@ -5,7 +5,8 @@ import {
     motion,
     useMotionValue,
     useMotionTemplate,
-    useAnimationFrame
+    useAnimationFrame,
+    useInView
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -57,6 +58,7 @@ export const InfiniteGridBackground = ({
     showBlurSpheres = true
 }: InfiniteGridBackgroundProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const isInView = useInView(containerRef);
 
     // Track mouse position with Motion Values for performance
     const mouseX = useMotionValue(0);
@@ -76,6 +78,7 @@ export const InfiniteGridBackground = ({
     const speedY = 0.3;
 
     useAnimationFrame(() => {
+        if (!isInView) return;
         const currentX = gridOffsetX.get();
         const currentY = gridOffsetY.get();
         gridOffsetX.set((currentX + speedX) % gridSize);
