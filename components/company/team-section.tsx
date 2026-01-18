@@ -25,7 +25,7 @@ const members = [
 export function TeamSection() {
     return (
         <section className="py-24 bg-background">
-            <div className="container mx-auto border-t border-border px-6 pt-12">
+            <div className="container mx-auto max-w-6xl border-t border-border px-6 lg:px-12 pt-12">
                 <span className="text-caption -ml-6 -mt-3.5 block w-max bg-background px-6 text-muted-foreground font-medium">Team</span>
                 <div className="mt-12 gap-4 sm:grid sm:grid-cols-2 md:mt-24">
                     <div className="sm:w-2/5">

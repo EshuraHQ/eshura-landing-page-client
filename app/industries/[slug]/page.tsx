@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import { industryData } from "@/lib/industry-data";
 import AnimatedHero from "@/components/industry/animated-hero";
-import WavePath from "@/components/industry/wave-path";
+import { Hero115 } from "@/components/ui/hero-115";
+
 import FeaturedSectionStats from "@/components/industry/featured-section-stats";
-import CaseStudies from "@/components/industry/case-studies";
 import FAQs from "@/components/industry/faqs-component";
+import { HeroGridSection } from "@/components/ui/hero-grid-section";
 import { cn } from "@/lib/utils";
 
 interface PageProps {
@@ -42,36 +43,21 @@ export default async function IndustryPage({ params }: PageProps) {
                 description={data.featureCarousel.description}
             />
 
-            {/* Wave Path Divider */}
-            <div className="relative w-full flex min-h-[30vh] flex-col items-center justify-center bg-background">
-                <div
-                    aria-hidden="true"
-                    className={cn(
-                        "pointer-events-none absolute -top-10 left-1/2 size-full -translate-x-1/2 rounded-full",
-                        "bg-[radial-gradient(ellipse_at_center,hsl(var(--foreground)/.1),transparent_50%)]",
-                        "blur-[30px]"
-                    )}
-                />
+            {/* New Hero 115 Section */}
+            <Hero115
+                heading={`Transforming ${data.hero.title} with AI`}
+                description={`Leverage our advanced AI agents to revolutionize your ${data.hero.title.toLowerCase()} operations. Built for scale, security, and performance.`}
+                button={{
+                    text: "Get Started",
+                    url: "/contact",
+                    icon: undefined
+                }}
+                imageSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop"
+                trustText="Trusted by industry leaders"
+            />
 
-                <div className="flex w-[70vw] flex-col items-end">
-                    <WavePath className="mb-10" />
-                    <div className="flex w-full flex-col items-end">
-                        <div className="flex justify-end">
-                            <p className="text-muted-foreground mt-2 text-sm">
-                                {data.featureCarousel.badge}
-                            </p>
-                            <p className="text-foreground/80 ml-8 w-3/4 text-2xl md:text-4xl">
-                                {data.featureCarousel.title}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            
 
-            {/* Case Studies Section */}
-            <CaseStudies />
 
 
             {/* Featured Section with Stats */}
@@ -83,6 +69,9 @@ export default async function IndustryPage({ params }: PageProps) {
                 heading={data.faq.heading}
                 description={data.faq.description}
             />
+
+            {/* Hero Grid Section */}
+            <HeroGridSection />
         </div>
     );
 }

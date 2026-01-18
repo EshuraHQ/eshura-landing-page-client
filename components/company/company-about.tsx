@@ -94,7 +94,7 @@ export const About = ({
 }: About3Props = {}) => {
     return (
         <section className="py-24">
-            <div className="container mx-auto">
+            <div className="container mx-auto max-w-6xl px-6 lg:px-12">
                 <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
                     <h1 className="text-5xl font-semibold">{title}</h1>
                     <p className="text-muted-foreground">{description}</p>
@@ -129,20 +129,10 @@ export const About = ({
                         />
                     </div>
                 </div>
-                <div className="py-32">
-                    <p className="text-center">{companiesTitle} </p>
-                    <div className="mt-8 flex flex-wrap justify-center gap-8">
-                        {companies.map((company, idx) => (
-                            <div className="flex items-center gap-3" key={company.src + idx}>
-                                <img
-                                    src={company.src}
-                                    alt={company.alt}
-                                    className="h-6 w-auto md:h-8"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
+
+                {/* Spacer to maintain layout rhythm */}
+                <div className="py-16 md:py-24" />
+
                 <div className="relative overflow-hidden rounded-xl bg-muted p-10 md:p-16">
                     <div className="flex flex-col gap-4 text-center md:text-left">
                         <h2 className="text-4xl font-semibold">{achievementsTitle}</h2>

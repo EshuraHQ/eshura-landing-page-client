@@ -47,13 +47,13 @@ export default function FAQs({ faqItems, heading, description }: FAQsProps) {
     const items = faqItems || defaultFaqItems;
 
     return (
-        <section className="bg-muted py-16 md:py-24">
+        <section className="bg-black py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-4 md:px-6">
                 <div>
-                    <h2 className="text-foreground text-4xl font-semibold">
+                    <h2 className="text-white text-4xl font-semibold">
                         {heading || "Frequently Asked Questions"}
                     </h2>
-                    <p className="text-muted-foreground mt-4 text-balance text-lg">
+                    <p className="text-zinc-400 mt-4 text-balance text-lg">
                         {description || "Discover quick and comprehensive answers to common questions about our platform, services, and features."}
                     </p>
                 </div>
@@ -62,27 +62,27 @@ export default function FAQs({ faqItems, heading, description }: FAQsProps) {
                     <Accordion
                         type="single"
                         collapsible
-                        className="bg-card ring-foreground/5 rounded-lg w-full border border-transparent px-8 py-3 shadow ring-1">
+                        className="bg-black ring-zinc-800 rounded-lg w-full border border-zinc-800 px-8 py-3 shadow ring-1">
                         {items.map((item) => (
                             <AccordionItem
                                 key={item.id}
                                 value={item.id}
-                                className="border-dotted">
-                                <AccordionTrigger className="cursor-pointer text-base hover:no-underline">
+                                className="border-zinc-800">
+                                <AccordionTrigger className="cursor-pointer text-base text-zinc-200 hover:text-white hover:no-underline">
                                     {item.question}
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                    <p className="text-base">{item.answer}</p>
+                                    <p className="text-base text-zinc-400">{item.answer}</p>
                                 </AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>
 
-                    <p className="text-muted-foreground mt-6">
+                    <p className="text-zinc-500 mt-6">
                         Can't find what you're looking for? Contact our{' '}
                         <Link
-                            href="#"
-                            className="text-primary font-medium hover:underline">
+                            href="/contact"
+                            className="text-white font-medium hover:underline">
                             customer support team
                         </Link>
                     </p>

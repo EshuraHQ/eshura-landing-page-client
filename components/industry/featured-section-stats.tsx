@@ -19,39 +19,39 @@ export default function FeaturedSectionStats() {
     ];
 
     return (
-        <section className="w-full max-w-6xl mx-auto text-left py-32 bg-background">
+        <section className="w-full max-w-6xl mx-auto text-left py-16 bg-background">
             <div className="px-4">
-                <h3 className="text-lg sm:text-xl lg:text-4xl font-medium text-foreground mb-16">
+                <h3 className="text-lg sm:text-xl lg:text-3xl font-medium text-foreground mb-8">
                     Powering teams with real-time insights.{" "}
-                    <span className="text-muted-foreground text-sm sm:text-base lg:text-4xl">
+                    <span className="text-muted-foreground text-sm sm:text-base lg:text-2xl">
                         Our next-gen analytics dashboard helps you track performance, manage
                         clients, and make data-driven decisions in seconds.
                     </span>
                 </h3>
 
                 {/* Stats grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
                     <div>
-                        <p className="text-3xl font-medium text-foreground">50,000+</p>
-                        <p className="text-muted-foreground text-md">Projects Managed</p>
+                        <p className="text-2xl font-medium text-foreground">50,000+</p>
+                        <p className="text-muted-foreground text-sm">Projects Managed</p>
                     </div>
                     <div>
-                        <p className="text-3xl font-medium text-foreground">99.9%</p>
-                        <p className="text-muted-foreground text-md">Uptime Guarantee</p>
+                        <p className="text-2xl font-medium text-foreground">99.9%</p>
+                        <p className="text-muted-foreground text-sm">Uptime Guarantee</p>
                     </div>
                     <div>
-                        <p className="text-3xl font-medium text-foreground">1,200+</p>
-                        <p className="text-muted-foreground text-md">Enterprise Clients</p>
+                        <p className="text-2xl font-medium text-foreground">1,200+</p>
+                        <p className="text-muted-foreground text-sm">Enterprise Clients</p>
                     </div>
                     <div>
-                        <p className="text-3xl font-medium text-foreground">1.2s</p>
-                        <p className="text-muted-foreground text-md">Avg. Response Time</p>
+                        <p className="text-2xl font-medium text-foreground">1.2s</p>
+                        <p className="text-muted-foreground text-sm">Avg. Response Time</p>
                     </div>
                 </div>
             </div>
 
             {/* Area Chart */}
-            <div className="w-full h-48 mt-8">
+            <div className="w-full h-32 mt-6">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={data}>
                         <defs>

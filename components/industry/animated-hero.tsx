@@ -31,8 +31,21 @@ export default function AnimatedHero({ title, description }: AnimatedHeroProps) 
         return () => clearTimeout(timeoutId);
     }, [titleNumber, titles]);
 
+    const [particles, setParticles] = useState<Array<{ top: string; left: string; duration: number; delay: number }>>([]);
+
+    useEffect(() => {
+        // Reduced particle count for better performance
+        const newParticles = Array.from({ length: 15 }).map(() => ({
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            duration: 5 + Math.random() * 5,
+            delay: Math.random() * 5,
+        }));
+        setParticles(newParticles);
+    }, []);
+
     return (
-        <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden bg-gradient-to-br from-background to-muted/30">
+        <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-24 overflow-hidden bg-gradient-to-br from-background to-muted/30">
             <DotPattern className={cn(
                 "[mask-image:radial-gradient(50vw_circle_at_center,white,transparent)]",
             )} />
@@ -40,30 +53,30 @@ export default function AnimatedHero({ title, description }: AnimatedHeroProps) 
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 0.4, scale: 1 }}
                 transition={{ duration: 1.4 }}
-                className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-primary/30 blur-[120px] rounded-full z-0"
+                className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-primary/30 blur-[120px] rounded-full z-0 will-change-transform"
             />
             <motion.div
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 0.3, scale: 1 }}
                 transition={{ duration: 1.6, delay: 0.3 }}
-                className="absolute bottom-[-100px] right-[-100px] w-[400px] h-[400px] bg-secondary/20 blur-[160px] rounded-full z-0"
+                className="absolute bottom-[-100px] right-[-100px] w-[400px] h-[400px] bg-secondary/20 blur-[160px] rounded-full z-0 will-change-transform"
             />
 
             <div className="absolute inset-0 z-0 pointer-events-none">
-                {Array.from({ length: 30 }).map((_, i) => (
+                {particles.map((particle, i) => (
                     <motion.div
                         key={i}
                         initial={{ opacity: 0, y: 0 }}
                         animate={{ opacity: 0.2, y: [0, -20, 0] }}
                         transition={{
-                            duration: 5 + Math.random() * 5,
+                            duration: particle.duration,
                             repeat: Infinity,
-                            delay: Math.random() * 5,
+                            delay: particle.delay,
                         }}
-                        className="absolute w-1 h-1 bg-muted-foreground/20 rounded-full"
+                        className="absolute w-1 h-1 bg-muted-foreground/20 rounded-full will-change-transform"
                         style={{
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
+                            top: particle.top,
+                            left: particle.left,
                         }}
                     />
                 ))}
