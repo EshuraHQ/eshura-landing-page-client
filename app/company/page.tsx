@@ -14,7 +14,7 @@ export default function CompanyPage() {
             <div className="w-full scroll-smooth pt-24">
                 {/* 1. Hero Section with Sparkles */}
                 <section id="hero" className="h-[40rem] w-full bg-background flex flex-col items-center justify-center overflow-hidden relative">
-                    <h1 className="md:text-7xl text-5xl lg:text-9xl font-bold text-center text-foreground relative z-20 font-[family-name:var(--font-birthstone)]">
+                    <h1 className="md:text-7xl text-5xl lg:text-9xl font-bold text-center text-foreground relative  font-[family-name:var(--font-birthstone)]">
                         Eshura
                     </h1>
                     <div className="w-full max-w-[40rem] h-40 relative">

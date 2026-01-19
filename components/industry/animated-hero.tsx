@@ -84,7 +84,7 @@ export default function AnimatedHero({ title, description }: AnimatedHeroProps) 
 
             <div className="relative z-10 text-center max-w-3xl space-y-8">
                 {/* Optional Github Button - Kept as placeholder for style validity, can be removed or changed to something else */}
-                <button
+                {/* <button
                     className="group relative inline-flex h-10 cursor-pointer items-center justify-center rounded-full border-0 bg-[length:200%] px-6 font-medium transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent]
             focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50
             before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-[rainbow_3s_linear_infinite] before:bg-[linear-gradient(90deg,var(--color-1),var(--color-2),var(--color-3),var(--color-4),var(--color-5))] before:bg-[length:200%] before:[filter:blur(12px)]
@@ -101,7 +101,7 @@ export default function AnimatedHero({ title, description }: AnimatedHeroProps) 
                         <Github className="w-4 h-4 mr-2" />
                         Explore Our Solutions
                     </span>
-                </button>
+                </button> */}
 
                 <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tighter text-foreground">
                     <span className="block mb-2">This is something</span>
@@ -141,12 +141,12 @@ export default function AnimatedHero({ title, description }: AnimatedHeroProps) 
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
                 >
-                    <MotionButton size="lg" className="w-full sm:w-auto gap-2">
+                    <MotionButton size="lg" className="w-full sm:w-auto gap-2 cursor-pointer">
                         Get Started <MoveRight className="w-4 h-4" />
                     </MotionButton>
-                    <MotionButton size="lg" variant="outline" className="w-full sm:w-auto gap-2">
+                    {/* <MotionButton size="lg" variant="outline" className="w-full sm:w-auto gap-2">
                         Jump on a call <PhoneCall className="w-4 h-4" />
-                    </MotionButton>
+                    </MotionButton> */}
                 </motion.div>
             </div>
         </section>

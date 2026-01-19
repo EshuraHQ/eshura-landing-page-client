@@ -5,6 +5,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BackgroundPattern } from "@/components/background-pattern";
+import { ExpandableChatDemo } from "@/components/expandable-chat-demo";
 
 const inter = Inter({ subsets: ["latin"] });
 const birthstone = Birthstone({
@@ -31,6 +32,7 @@ export default function RootLayout({
                     <BackgroundPattern />
                     {children}
                     <Footer />
+                    <ExpandableChatDemo />
                 </ThemeProvider>
             </body>
         </html>

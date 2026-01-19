@@ -17,7 +17,6 @@ interface Hero115Props {
 }
 
 const Hero115 = ({
-  icon = <Wifi className="size-6" />,
   heading = "Blocks built with Shadcn & Tailwind",
   description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
   button = {
@@ -44,9 +43,7 @@ const Hero115 = ({
                 <div className="size-full rounded-full border"></div>
               </div>
             </div>
-            <span className="mx-auto flex size-12 items-center justify-center rounded-full border md:size-16">
-              {icon}
-            </span>
+            
             <h2 className="mx-auto max-w-screen-lg text-balance text-center text-3xl font-medium md:text-5xl text-foreground">
               {heading}
             </h2>
@@ -54,11 +51,11 @@ const Hero115 = ({
               {description}
             </p>
             <div className="flex flex-col items-center justify-center gap-3 pb-8 pt-3">
-              <Button size="lg" asChild>
+              {/* <Button size="lg" asChild>
                 <a href={button.url}>
                   {button.text} {button.icon}
                 </a>
-              </Button>
+              </Button> */}
               {trustText && (
                 <div className="text-xs text-muted-foreground">{trustText}</div>
               )}

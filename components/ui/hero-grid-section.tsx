@@ -92,7 +92,7 @@ export function HeroGrid({
                 </div>
                 <div className="flex items-start justify-center px-8.25 sm:px-24" >
                     <div className="flex w-full max-w-[80vw] flex-col items-center justify-start md:!max-w-[392px]" >
-                        <Button className="!h-14 flex-col items-center justify-center rounded-none !text-base flex w-full max-w-sm:!border-x-0 !border-x !border-y-0 border-[--border] !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:border-[--dark-border] dark:hover:!bg-white/5 cursor-pointer" variant="outline"
+                        <Button className="!h-14 flex-col items-center justify-center text-black rounded-none !text-base flex w-full max-w-sm:!border-x-0 !border-x !border-y-0 border-[--border] bg-white backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:border-[--dark-border] dark:hover:!bg-white/5 cursor-pointer" variant="outline"
                             onClick={onPrimaryCtaClick}
                         >
                             {primaryCtaText}
